@@ -2,7 +2,7 @@
   "name": "@kentaro19781123/test-package",
   "description": "GitHub Package test",
   "author": "kentaro19781123",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "./dist/test-package.umd.js",
   "module": "./dist/test-package.es.js",
   "types": "./dist/index.d.ts",
@@ -28,7 +28,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && tsc -b && cp -f tailwind.config.js dist",
+    "build": "vite build && tsc -b && pnpm run build:css && cp -f tailwind.config.js dist",
     "build:css": "tailwindcss -m -i src/index.css -o ./dist/tailwind.style.min.css",
     "lint": "eslint .",
     "preview": "vite preview"
