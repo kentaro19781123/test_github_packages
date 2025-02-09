@@ -1,4 +1,4 @@
-name: Publish package to GitHub Packages
+name: echo version
 
 on:
   # push:
@@ -16,9 +16,6 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-
       - name: Node setup
         uses: actions/setup-node@v4
         with:
@@ -26,16 +23,8 @@ jobs:
           cache: "pnpm"
           registry-url: "https://npm.pkg.github.com"
 
-      - name: Install
-        run: pnpm i --frozen-lockfile
-
-      - name: Build
-        run: pnpm run build
-
-      - name: Publish to GitHub Packages
-        run: pnpm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: package-version
         run: node -p -e '`PACKAGE_VERSION=${require("./package.json").version}`' >> $GITHUB_ENV
+
+      - name: echo version
+        run: echo "$PACKAGE_VERSION"
