@@ -1,13 +1,39 @@
 {
-  "name": "aaaa",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@kentaro19781123/test-package",
+  "description": "GitHub Package test",
+  "author": "kentaro19781123",
+  "version": "0.0.3",
+  "main": "./dist/test-package.umd.js",
+  "module": "./dist/test-package.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/test-package.es.js",
+      "require": "./dist/test-package.umd.js"
+    },
+    "./tailwind.config.js": "./dist/tailwind.config.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "@kentaro19781123:registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kentaro19781123/test_github_packages.git"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build && tsc -b && cp -f tailwind.config.js dist",
     "lint": "eslint .",
     "preview": "vite preview"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "dependencies": {
     "react": "^19.0.0",
