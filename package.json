@@ -12,7 +12,8 @@
       "import": "./dist/test-package.es.js",
       "require": "./dist/test-package.umd.js"
     },
-    "./tailwind.config.js": "./dist/tailwind.config.js"
+    "./tailwind.config.js": "./dist/tailwind.config.js",
+    "./tailwind.style.min.css": "./dist/tailwind.style.min.css"
   },
   "files": [
     "dist"
@@ -28,6 +29,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && tsc -b && cp -f tailwind.config.js dist",
+    "build:css": "tailwindcss -m -i src/index.css -o ./dist/tailwind.style.min.css",
     "lint": "eslint .",
     "preview": "vite preview"
   },
