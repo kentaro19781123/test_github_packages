@@ -1,9 +1,9 @@
 name: Publish package to GitHub Packages
 
 on:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
   workflow_dispatch:
 
 jobs:
@@ -16,9 +16,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 10
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
 
       - name: Node setup
         uses: actions/setup-node@v4
