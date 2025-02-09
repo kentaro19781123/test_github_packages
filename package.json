@@ -2,7 +2,7 @@
   "name": "@kentaro19781123/test-package",
   "description": "GitHub Package test",
   "author": "kentaro19781123",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "./dist/test-package.umd.js",
   "module": "./dist/test-package.es.js",
   "types": "./dist/index.d.ts",
