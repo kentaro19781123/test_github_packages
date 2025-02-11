@@ -15,9 +15,7 @@
     "./tailwind.config.js": "./dist/tailwind.config.js",
     "./tailwind.style.min.css": "./dist/tailwind.style.min.css"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "publishConfig": {
     "@kentaro19781123:registry": "https://npm.pkg.github.com"
   },
@@ -30,7 +28,9 @@
     "dev": "vite",
     "build": "vite build && tsc -b && pnpm run build:css && cp -f tailwind.config.js dist",
     "build:css": "tailwindcss -m -i src/index.css -o ./dist/tailwind.style.min.css",
-    "lint": "eslint .",
+    "lint": "biome lint .",
+    "format": "biome format .",
+    "lint:fix": "biome check --write --unsafe .",
     "preview": "vite preview"
   },
   "peerDependencies": {
