@@ -2,7 +2,7 @@
   "name": "@kentaro19781123/test-package",
   "description": "GitHub Package test",
   "author": "kentaro19781123",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "main": "./dist/test-package.umd.js",
   "module": "./dist/test-package.es.js",
   "types": "./dist/index.d.ts",
@@ -15,7 +15,9 @@
     "./tailwind.config.js": "./dist/tailwind.config.js",
     "./tailwind.style.min.css": "./dist/tailwind.style.min.css"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "@kentaro19781123:registry": "https://npm.pkg.github.com"
   },
@@ -23,7 +25,6 @@
     "type": "git",
     "url": "git@github.com:kentaro19781123/test_github_packages.git"
   },
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build && tsc -b && pnpm run build:css && cp -f tailwind.config.js dist",
