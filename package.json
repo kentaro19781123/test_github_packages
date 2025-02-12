@@ -2,14 +2,14 @@
   "name": "@kentaro19781123/test-package",
   "description": "GitHub Package test",
   "author": "kentaro19781123",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "main": "./dist/test-package.umd.js",
-  "module": "./dist/test-package.es.js",
+  "module": "./dist/test-package.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/test-package.es.js",
+      "import": "./dist/test-package.mjs",
       "require": "./dist/test-package.umd.js"
     },
     "./tailwind.config.js": "./dist/tailwind.config.js",
