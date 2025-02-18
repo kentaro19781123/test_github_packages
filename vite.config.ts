@@ -16,8 +16,8 @@ export default defineConfig({
 			entry: "src/index.ts",
 			name: "test-package",
 			// fileName: "index",
-			// formats: ["es", "umd", "cjs"], // default の設定と同じ
-			// fileName: (format) => `test-package.${format}.js`,
+			formats: ["es", "umd", "cjs"], // default の設定と同じ
+			fileName: (format) => `test-package.${format}.js`,
 		},
 		rollupOptions: {
 			external: ["react", "react-dom", "tailwindcss"],
